@@ -1,0 +1,43 @@
+{
+  "address": "0x6043fD7126e4229d6FcaC388c9E1C8d333CCb8fA",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [
+        { "internalType": "address", "name": "usr", "type": "address" },
+        { "internalType": "uint256", "name": "wad", "type": "uint256" }
+      ],
+      "name": "approve",
+      "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "owner",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "spender",
+          "type": "address"
+        }
+      ],
+      "name": "allowance",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ]
+}

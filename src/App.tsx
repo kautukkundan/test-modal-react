@@ -1,25 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+
+import globalStore, { IGlobalStore } from "./store/globalStore";
+import { createStore, StoreProvider } from "easy-peasy";
+
+import InfoHeader from "./components/InfoHeader";
+import ConnectWeb3 from "./components/ConnectWeb3";
+import GasModal from "./components/GasModal";
+
+const store = createStore<IGlobalStore>(globalStore);
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <StoreProvider store={store}>
+      <div className="App">
+        <div className="main-card">
+          <InfoHeader />
+          <div className="body">
+            <ConnectWeb3 />
+            <GasModal />
+          </div>
+        </div>
+      </div>
+    </StoreProvider>
   );
 }
 
